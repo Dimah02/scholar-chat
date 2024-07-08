@@ -77,6 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 8,
                 ),
                 CustomTextfield(
+                  obsecureText: true,
                   hintText: "Password",
                   onChanged: (newVal) {
                     password = newVal;
@@ -107,7 +108,8 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ),
                         );
-                        Navigator.pushNamed(context, "/chatPage");
+                        Navigator.pushNamed(context, "/chatPage",
+                            arguments: email);
                       } catch (e) {
                         print(e);
                         ScaffoldMessenger.of(context).showSnackBar(
